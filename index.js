@@ -4,8 +4,15 @@ console.log('hello world');
 
 // For example, a song with words "I AM X" can transform into a dubstep remix as "WUBWUBIWUBAMWUBWUBX" and cannot transform into "WUBWUBIAMWUBX".
 function songDecoder(song){
-	// ...
-	return song;
+	let orig = '';
+	const words = song.split('WUB');
+	words.forEach(word => {
+		if (word !== '') {
+			orig += word + ' ';
+			console.log('word', word);
+		}
+	})
+	return orig.trim();
   }
 
 
