@@ -43,8 +43,23 @@ function tripledouble(num1, num2) {
 	return arr;
  }
 
+// You are given an array strarr of strings and an integer k. Your task is to return the first longest string consisting of k consecutive strings taken in the array.
+// #Example: longest_consec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abigail"], 2) --> "abigailtheta"
+// n being the length of the string array, if n = 0 or k > n or k <= 0 return "".
  function longestConsec(strarr, k) {
-    // your code
+	let longStr = '';
+	if (strarr.length < k) return ''
+	else if (strarr.length === 0) return ''
+	else {
+		for (let i=0; i<=strarr.length-k; i++) {
+			let tempStr = ''
+			for (let i2=0; i2<k; i2++) {
+				tempStr += strarr[i+i2];
+			}
+			if (tempStr.length > longStr.length) longStr = tempStr;
+		}
+	}
+	return longStr;
 }
 
 
