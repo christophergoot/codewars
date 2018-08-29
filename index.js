@@ -43,9 +43,14 @@ function tripledouble(num1, num2) {
 	return arr;
  }
 
+ function longestConsec(strarr, k) {
+    // your code
+}
+
 
 module.exports = {
 	songDecoder,
 	tripledouble,
-	solution
+	solution,
+	longestConsec
 }
