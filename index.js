@@ -63,9 +63,21 @@ function tripledouble(num1, num2) {
 }
 
 
+// Bubblesort Algorithm
+// Given a list, Bubblesort will compare two consecutives items and swap them depending on how you want it ordered.
+
+// Task 
+// Given an array of integers, your function bubblesortOnce / bubblesort_once / BubblesortOnce should return a new array equivalent to performing exactly 1 complete pass on the original array. Your function should be pure, i.e. it should not mutate the input array.
+function bubblesortOnce(arr) {
+	return arr;
+}
+
+
+
 module.exports = {
 	songDecoder,
 	tripledouble,
 	solution,
-	longestConsec
+	longestConsec,
+	bubblesortOnce
 }

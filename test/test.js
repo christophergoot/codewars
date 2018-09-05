@@ -2,7 +2,8 @@ const {
 	songDecoder,
 	tripledouble,
 	solution,
-	longestConsec
+	longestConsec,
+	bubblesortOnce
  } = require('../index');
 
 const assert = require('assert');
@@ -34,5 +35,8 @@ describe('Code Wars', function() {
 		assert.equal(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 3), "ixoyx3452zzzzzzzzzzzz");
 		assert.equal(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 15), "");
 		assert.equal(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 0), "");
+	}),
+	it('bubbleSortOnce', () => {
+		assert.equal(bubblesortOnce([9, 7, 5, 3, 1, 2, 4, 6, 8]), [7, 5, 3, 1, 2, 4, 6, 8, 9]);
 	})
 });
