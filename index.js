@@ -69,7 +69,15 @@ function tripledouble(num1, num2) {
 // Task 
 // Given an array of integers, your function bubblesortOnce / bubblesort_once / BubblesortOnce should return a new array equivalent to performing exactly 1 complete pass on the original array. Your function should be pure, i.e. it should not mutate the input array.
 function bubblesortOnce(arr) {
-	return arr;
+	const sArr = [...arr];
+	for (let i=0; i<arr.length-1; i++) {
+		const j = sArr[i], k = sArr[i+1];
+		if (j>k) {
+			sArr[i] = k;
+			sArr[i+1] = j;
+		}
+	}
+	return sArr;
 }
 
 

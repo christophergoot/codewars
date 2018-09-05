@@ -37,6 +37,6 @@ describe('Code Wars', function() {
 		assert.equal(longestConsec(["it","wkppv","ixoyx", "3452", "zzzzzzzzzzzz"], 0), "");
 	}),
 	it('bubbleSortOnce', () => {
-		assert.equal(bubblesortOnce([9, 7, 5, 3, 1, 2, 4, 6, 8]), [7, 5, 3, 1, 2, 4, 6, 8, 9]);
+		assert.deepEqual(bubblesortOnce([9, 7, 5, 3, 1, 2, 4, 6, 8]), [7, 5, 3, 1, 2, 4, 6, 8, 9]);
 	})
 });
