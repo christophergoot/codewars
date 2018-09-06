@@ -4,7 +4,8 @@ const {
 	solution,
 	longestConsec,
 	bubblesortOnce,
-	fullBubbleSort
+	fullBubbleSort,
+	parse
  } = require('../index');
 
 const assert = require('assert');
@@ -43,5 +44,8 @@ describe('Code Wars', function() {
 	it('fullBubbleSort', () => {
 		assert.deepEqual(fullBubbleSort([6,7,3,4,2,1,8]), [1,2,3,4,6,7,8] );
 		assert.deepEqual(fullBubbleSort([9, 7, 5, 3, 1, 2, 4, 6, 8]), [1,2,3,4,5,6,7,8,9] );
+	}),
+	it('parse deadfish', () => {
+		assert.deepEqual(parse('iiisdoso'), [ 8, 64 ]);
 	})
 });

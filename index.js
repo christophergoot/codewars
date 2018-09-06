@@ -92,11 +92,21 @@ function fullBubbleSort(arr) {
 	return (newArr);
 }
 
+function parse(str) {
+	const arr = [];
+	for (let i=0; i<str.length; i++) {
+		arr.push(str.charAt(i));
+	}
+	return arr;
+}
+
+
 module.exports = {
 	songDecoder,
 	tripledouble,
 	solution,
 	longestConsec,
 	bubblesortOnce,
-	fullBubbleSort
+	fullBubbleSort,
+	parse
 }
