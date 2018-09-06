@@ -3,7 +3,8 @@ const {
 	tripledouble,
 	solution,
 	longestConsec,
-	bubblesortOnce
+	bubblesortOnce,
+	fullBubbleSort
  } = require('../index');
 
 const assert = require('assert');
@@ -38,5 +39,9 @@ describe('Code Wars', function() {
 	}),
 	it('bubbleSortOnce', () => {
 		assert.deepEqual(bubblesortOnce([9, 7, 5, 3, 1, 2, 4, 6, 8]), [7, 5, 3, 1, 2, 4, 6, 8, 9]);
+	}),
+	it('fullBubbleSort', () => {
+		assert.deepEqual(fullBubbleSort([6,7,3,4,2,1,8]), [1,2,3,4,6,7,8] );
+		assert.deepEqual(fullBubbleSort([9, 7, 5, 3, 1, 2, 4, 6, 8]), [1,2,3,4,5,6,7,8,9] );
 	})
 });

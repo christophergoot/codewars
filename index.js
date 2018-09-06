@@ -80,12 +80,23 @@ function bubblesortOnce(arr) {
 	return sArr;
 }
 
-
+function fullBubbleSort(arr) {
+	let newArr = [...arr], sorted=false;
+	while (sorted===false) {
+		const sortedArr = bubblesortOnce(newArr);
+		if (JSON.stringify(sortedArr) === JSON.stringify(newArr)) {
+			sorted = true;
+		}
+		else newArr = sortedArr;
+	}
+	return (newArr);
+}
 
 module.exports = {
 	songDecoder,
 	tripledouble,
 	solution,
 	longestConsec,
-	bubblesortOnce
+	bubblesortOnce,
+	fullBubbleSort
 }
