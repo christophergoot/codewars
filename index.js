@@ -121,7 +121,6 @@ function parse(str) {
 				arr.push(value);
 				break;
 			}				
-
 			default: {
 				break;
 			}
@@ -129,6 +128,39 @@ function parse(str) {
 	}
 	return arr;
 }
+
+// years, days, hours, minutes and seconds.
+// , a year is 365 days and a day is 24 hours.
+
+function formatDuration (seconds) {
+	if (seconds === 0) return 'now'	
+	let secs = parseInt(seconds),
+		parsedDuration = '';
+	const duration = [];
+	const fields = {
+		years: 31536000,
+		days: 86400,
+		hours: 3600,
+		minutes: 60,
+		seconds: 1
+	};
+	for (key in fields) {
+		if (secs>=fields[key]) {
+			duration.push({ [key]: Math.floor(secs / fields[key]) });
+			secs = (secs % fields[key]);
+		}
+	}
+	for (let i=0; i<duration.length; i++) {
+		let unit = Object.keys(duration[i])[0];
+		let number = duration[i][unit];
+		if (number === 1) unit = unit.slice(0, unit.length-1);
+		if (duration.length-i+1>3) parsedDuration += `${number} ${unit}, `
+		else if (duration.length-i === 2) parsedDuration += `${number} ${unit} and `
+		else parsedDuration += `${number} ${unit}`
+	}
+	return (parsedDuration);
+  }
+  
 
 
 module.exports = {
@@ -138,5 +170,6 @@ module.exports = {
 	longestConsec,
 	bubblesortOnce,
 	fullBubbleSort,
-	parse
+	parse,
+	formatDuration
 }

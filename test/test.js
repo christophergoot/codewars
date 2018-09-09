@@ -5,7 +5,8 @@ const {
 	longestConsec,
 	bubblesortOnce,
 	fullBubbleSort,
-	parse
+	parse,
+	formatDuration
  } = require('../index');
 
 const assert = require('assert');
@@ -47,5 +48,13 @@ describe('Code Wars', function() {
 	}),
 	it('parse deadfish', () => {
 		assert.deepEqual(parse('iiisdoso'), [ 8, 64 ]);
+	}),
+	it('formatDuration', () => {
+		assert.equal(formatDuration(1), "1 second");
+		assert.equal(formatDuration(62), "1 minute and 2 seconds");
+		assert.equal(formatDuration(120), "2 minutes");
+		assert.equal(formatDuration(3600), "1 hour");
+		assert.equal(formatDuration(3662), "1 hour, 1 minute and 2 seconds");
+		assert.equal(formatDuration(3601), "1 hour and 1 second");
 	})
 });
